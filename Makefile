@@ -32,10 +32,10 @@ lint:
 
 test:
 	@go test -p=1 -coverpkg $(COVER_PACKAGES) \
-		-covermode=atomic -coverprofile=coverage.out $(TEST_PACKAGES)
+		-covermode=atomic -coverprofile=coverage.txt $(TEST_PACKAGES)
 
 cover: test
-	@go tool cover -html=coverage.out
+	@go tool cover -html=coverage.txt
 
 fmt:
 	@find . -name '*.go' -not -wholename './vendor/*' | \
